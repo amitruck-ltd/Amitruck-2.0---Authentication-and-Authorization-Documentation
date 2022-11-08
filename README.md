@@ -77,7 +77,3 @@ Once this is done, go ahead and make the request by pressing the send button. If
     "refresh_token": "v26jHOfmd1hXV97iLoyAVJrZgXWdtZ"
 }
 ```
-
-## License
-
-[The MIT license](./LICENSE)
