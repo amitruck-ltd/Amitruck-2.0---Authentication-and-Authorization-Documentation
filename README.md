@@ -55,7 +55,19 @@ The body of this should be as shown below. The body contains superuser credentia
 
 </div>
 
-The next step is very important inorder for us to get the access_token. For you to get the token, thr client_id and client token we got from step one are required.
+The next step is very important inorder for us to get the access_token. For you to get the token, thr client_id and client token we got from step one are required. As seen in the screenshot below, we use the client_id as the username and client secret as the password in the Auth section using Basic Auth type.
+
+<div align="center">
+	<br>
+	<br>
+	<img width="660" src="Assets/generate.png" alt="apidoc-markdown logo" />
+	<br>
+	<br>
+
+</div>
+
+{
+Once this is done, go ahead and make the request by pressing the send button. If all parameters you passsed are correct you should get a response as shown below with ` access_token`, ` expires_in`, ` token_type`, ` scope` and ` refresh_token`.
 
 ```ts
 {
