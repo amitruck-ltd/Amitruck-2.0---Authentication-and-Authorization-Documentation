@@ -49,7 +49,7 @@ The body of this should be as shown below. The body contains superuser credentia
 <div align="center">
 	<br>
 	<br>
-	<img width="760" src="Assets/token.png" alt="apidoc-markdown logo" />
+	<img width="660" src="Assets/token.png" alt="apidoc-markdown logo" />
 	<br>
 	<br>
 
