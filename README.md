@@ -77,3 +77,9 @@ Once this is done, go ahead and make the request by pressing the send button. If
     "refresh_token": "v26jHOfmd1hXV97iLoyAVJrZgXWdtZ"
 }
 ```
+
+<br><br>
+
+# Step Three
+
+Congratulations on reaching this step. Now that we have the token, we can use it to be able to access other API endpoints. We shall start by looking at the user register endpoint.
