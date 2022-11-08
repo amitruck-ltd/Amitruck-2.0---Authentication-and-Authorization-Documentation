@@ -66,7 +66,6 @@ The next step is very important inorder for us to get the access_token. For you 
 
 </div>
 
-{
 Once this is done, go ahead and make the request by pressing the send button. If all parameters you passsed are correct you should get a response as shown below with ` access_token`, ` expires_in`, ` token_type`, ` scope` and ` refresh_token`.
 
 ```ts
