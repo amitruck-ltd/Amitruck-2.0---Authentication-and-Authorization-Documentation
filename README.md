@@ -33,7 +33,7 @@ The client type should be confidential in this case. This is because we want to 
 
 <br><br>
 
-# Step 0ne
+# Step One
 
 Next the user is required to select the Authorization grant type which is this case is Resource owner passsword-based.
 Here we are making use of password as the grant type when generating the token.
@@ -234,3 +234,16 @@ Below is an example response after an ID of a user who doesnt exist is requested
 <br><br>
 This error message is thrown when there is an internal server error.
 <br><br>
+
+<br><br>
+
+Now we can go ahead and query for users in our database to see if we shall be able to get the user we just created and logged in. To do this we shall go ahead and to our postman to the `GET ALL USERS` request and send the Get request. We should be bale to query a list of users and see the user we just created. See the screeshot below:
+
+<div align="center">
+	<br>
+	<br>
+	<img width="760" src="Assets/getusers.png" alt="apidoc-markdown logo" />
+	<br>
+	<br>
+
+</div>
