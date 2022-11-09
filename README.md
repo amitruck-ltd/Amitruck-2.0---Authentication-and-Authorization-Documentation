@@ -29,7 +29,7 @@ The client type should be confidential in this case. This is because we want to 
 
 <br><br>
 
-# Step 0ne
+# Step One
 
 Next the user is required to select the Authorization grant type which is this case is Resource owner passsword-based. Here we are maing use of password as the grant type when generating the token.
 
@@ -136,7 +136,7 @@ After that we shall send the request by clicking the send button. If all paramet
 <br><br>
 Now that we have successfully created a user, we can go ahead and log them onto Amitruck 2.0.
 
-Head to postman and find the Login request. Here we reuqire the email and password of the registered user we created. We shall pass the below payload, not forgetting to pass our `access_token` in the authorization tab as we didi during register.
+Head to postman and find the Login request. Here we reuqire the email and password of the registered user we created. We shall pass the below payload, not forgetting to pass our `access_token` in the authorization tab as we did during register.
 
 ```ts
 {
@@ -155,3 +155,16 @@ We shall then send the request and if the email and password are correct and bel
     "token": "e0d16caff7f4aa96f2173655f769b7704274ee1069d2be444ccbf691f5173958"
 }
 ```
+
+<br><br>
+
+Now we can go ahead and query for users in our database to see if we shall be able to get the user we just created and logged in. To do this we shall go ahead and to our postman to the `GET ALL USERS` request and send the Get request. We should be bale to query a list of users and see the user we just created. See the screeshot below:
+
+<div align="center">
+	<br>
+	<br>
+	<img width="760" src="Assets/getusers.png" alt="apidoc-markdown logo" />
+	<br>
+	<br>
+
+</div>
