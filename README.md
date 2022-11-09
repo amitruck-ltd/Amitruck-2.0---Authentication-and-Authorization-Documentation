@@ -18,12 +18,16 @@
 
 </div>
 
+<br><br>
+
 # Introduction
 
 Welcome to Amitruck 2.0 Authentication and Authorization Service. This service requires users to register their applications first before they can be able to use our service.
 
 Applications are registered using django o-auth service which provides a user interface where a user must enter their application name. Applications in this case could be mobile or web applications. Django o-auth service automatically provides Client id and Client secret after the application name field. At this point, the user should take note of this two very important fields by copying them in a separate file. This fields will be used to generate a token that will allow the user to access all other APIs. Next, the user will be required to select the client type.
 The client type should be confidential in this case. This is because we want to ensure the security of the application.
+
+<br><br>
 
 # Step 0ne
 
@@ -39,6 +43,8 @@ Next the user will fill in the Redirect uris e.g https://dev.api.amitruck.co/v2/
 	<br>
 
 </div>
+
+<br><br>
 
 # Step Two
 
@@ -80,6 +86,72 @@ Once this is done, go ahead and make the request by pressing the send button. If
 
 <br><br>
 
-# Step Three
+# Accessing other APIs
 
-Congratulations on reaching this step. Now that we have the token, we can use it to be able to access other API endpoints. We shall start by looking at the user register endpoint.
+Congratulations on reaching this step. Now that we have the token, we can use it to be able to access other API endpoints. We shall start by looking at the user register endpoint. On Post man navigate to the Register request with url `https://dev.api.amitruck.co/v2/auth/user/register/`.
+We are going to provide the following payload in the body part in JSON format.
+
+```ts
+{
+	"email": "test@amitruck.com",
+    "phone_number": "254700500200",
+    "names": "Amitrurk User",
+    "password": "Test1234",
+    "password_confirm": "Test1234"
+
+}
+```
+
+We Shall then go to the Authorization part of thid request and pass our `access_token` which we got from step 2 above.
+
+<div align="center">
+	<br>
+	<br>
+	<img width="660" src="Assets/register.png" alt="apidoc-markdown logo" />
+	<br>
+	<br>
+
+</div>
+
+After that we shall send the request by clicking the send button. If all parameters are correct we expect to get the following response.
+<br><br>
+
+```ts
+{
+    "status": "Success",
+    "code": 201,
+    "message": "Registration Successful",
+    "data": [
+        {
+            "id": 3,
+            "names": "Amitrurk User",
+            "email": "test@amitruck.com",
+            "phone_number": "254700500200"
+        }
+    ],
+    "token": "7f82a49e98030b4476858786a3f3ebac274b6ca4a87691e21696dfe15b6a1431"
+}
+```
+
+<br><br>
+Now that we have successfully created a user, we can go ahead and log them onto Amitruck 2.0.
+
+Head to postman and find the Login request. Here we reuqire the email and password of the registered user we created. We shall pass the below payload, not forgetting to pass our `access_token` in the authorization tab as we didi during register.
+
+```ts
+{
+    "email":"test@amitruck.com",
+    "password":"Test1234"
+}
+```
+
+We shall then send the request and if the email and password are correct and belong to an existing user, we shall get the following resposne.
+
+```ts
+{
+    "status": "Success",
+    "code": 200,
+    "message": "You have been logged in Successfully",
+    "token": "e0d16caff7f4aa96f2173655f769b7704274ee1069d2be444ccbf691f5173958"
+}
+```
